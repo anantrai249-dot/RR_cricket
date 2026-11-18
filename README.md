@@ -27,7 +27,8 @@ This project delivers:
 ### Step 1: Data Pipeline & Model Preprocessing
 Processes raw ball-by-ball logs, cleans anomalies, calculates match state (RRR, phase, wickets down), fits Bayesian shrinkage, and exports `dashboard.json`:
 ```bash
-# Run from repository root
+# Optional: re-compute scores from raw tournament logs
+pip install -r scripts/requirements.txt
 python scripts/build_dataset.py
 ```
 *Outputs generated:*
@@ -37,18 +38,23 @@ python scripts/build_dataset.py
 
 ### Step 2: Launch the Analytics Dashboard
 ```bash
-cd frontend
-npm install
+# Launch directly from repository root
+npm install --prefix frontend
 npm run build
-npm run preview -- --port 5173 --host
+npm run preview --prefix frontend -- --port 5173 --host
 ```
 *The dashboard will be live at:* **`http://localhost:5173/`**
 
 For active development with hot-module reloading:
 ```bash
-cd frontend
 npm run dev
 ```
+
+### Step 3: Vercel Deployment
+The repository includes pre-configured [vercel.json](file:///c:/Users/anant/super-selector-s2/vercel.json) root routing:
+- **Build Command**: `npm run build --prefix frontend`
+- **Output Directory**: `frontend/dist`
+- If setting Root Directory in Vercel project settings, set to `frontend`.
 
 ---
 
