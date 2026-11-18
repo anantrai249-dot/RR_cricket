@@ -165,15 +165,15 @@ export const HeroOverview: React.FC<HeroOverviewProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl font-black text-gradient-gold-pink tracking-tight flex items-center gap-2">
+              <h2 className="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
                 <span>Pressure Reliability Index (PRI) Leaderboard</span>
                 <Sparkles size={16} className="text-amber-400" />
               </h2>
-              <span className="px-2.5 py-0.5 text-xs rounded-full bg-amber-400/20 text-gold-bright font-black border border-amber-400/40 glow-gold">
+              <span className="px-2.5 py-0.5 text-xs rounded-full bg-amber-400/20 text-amber-300 font-extrabold border border-amber-400/40">
                 Top 10
               </span>
             </div>
-            <p className="text-xs text-blue-bright/90 mt-1 font-semibold">
+            <p className="text-xs text-sky-200/80 mt-1 font-medium">
               Dynamically re-ranked based on current Bayesian weight distribution
             </p>
           </div>
@@ -260,29 +260,21 @@ export const HeroOverview: React.FC<HeroOverviewProps> = ({
                     {/* Name & Team */}
                     <td className="py-3.5 px-4">
                       <div>
-                        <div className={`font-black transition-colors flex items-center gap-1.5 ${
-                          rank === 1
-                            ? 'text-gold-bright text-sm glow-gold'
-                            : rank === 2
-                            ? 'text-blue-bright text-sm'
-                            : rank === 3
-                            ? 'text-pink-light text-sm'
-                            : 'text-white group-hover:text-pink-vivid'
-                        }`}>
+                        <div className="font-extrabold text-white group-hover:text-royals-pink transition-colors flex items-center gap-1.5">
                           <span>{player.name}</span>
                           {player.is_rr && (
-                            <span className="px-1.5 py-0.2 rounded text-[10px] bg-royals-pink/30 text-pink-vivid font-black border border-royals-pink/50">
+                            <span className="px-1.5 py-0.2 rounded text-[10px] bg-royals-pink/30 text-royals-pink font-extrabold border border-royals-pink/50">
                               RR
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-blue-bright/80 font-medium">{player.team}</div>
+                        <div className="text-xs text-sky-200/80 font-medium">{player.team}</div>
                       </div>
                     </td>
 
                     {/* Role */}
                     <td className="py-3.5 px-3">
-                      <span className="text-xs px-2.5 py-1 rounded-full glass-pill text-gold-bright font-bold border-amber-400/30 bg-amber-400/10">
+                      <span className="text-xs px-2.5 py-1 rounded-full glass-pill text-amber-200/90 font-semibold border-amber-400/20">
                         {player.role}
                       </span>
                     </td>

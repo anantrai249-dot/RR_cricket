@@ -39,7 +39,7 @@ export const Top10Picks: React.FC<Top10PicksProps> = ({
             <Crown size={13} className="text-amber-400" />
             <span>Auction War Room Intelligence</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-gradient-gold-pink tracking-tight flex items-center gap-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2">
             <span>Top 10 Pressure Titans</span>
             <Sparkles size={20} className="text-amber-400" />
           </h2>
@@ -125,21 +125,13 @@ export const Top10Picks: React.FC<Top10PicksProps> = ({
 
                   {/* Player Name & Team */}
                   <div>
-                    <h3 className={`text-lg font-black transition-colors ${
-                      rank === 1
-                        ? 'text-gradient-gold-royal text-xl'
-                        : rank === 2
-                        ? 'text-gradient-blue-royal text-xl'
-                        : rank === 3
-                        ? 'text-gradient-pink-electric text-xl'
-                        : 'text-white group-hover:text-pink-vivid'
-                    }`}>
+                    <h3 className="font-extrabold text-lg text-white group-hover:text-royals-pink transition-colors">
                       {player.name}
                     </h3>
-                    <div className="flex items-center gap-2 text-xs text-blue-bright font-medium mt-0.5">
+                    <div className="flex items-center gap-2 text-xs text-sky-200/80 mt-0.5 font-medium">
                       <span>{player.team}</span>
                       <span>•</span>
-                      <span className="text-gold-bright font-bold">{player.role}</span>
+                      <span className="text-amber-300 font-semibold">{player.role}</span>
                     </div>
                   </div>
                 </div>
